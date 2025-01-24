@@ -9,12 +9,12 @@
 
 - name: 'Ensure bash-completion Package is Installed via ({{ ansible_pkg_mgr }})'
   include_tasks: 'pkg-install-{{ ansible_pkg_mgr }}.yaml'
-  when: ansible_pkg_mgr in ('apt', 'yum', 'dnf')
+  when: ansible_pkg_mgr in ('apt', 'yum', 'dnf', 'dnf5')
 
 - fail:
     msg: WARNING This role is not setup to deal with package manager {{ ansible_pkg_mgr }} can not verify bash-completion Package is installed, bash completions may not work
   ignore_errors: yes
-  when: ansible_pkg_mgr not in ('apt', 'yum', 'dnf')
+  when: ansible_pkg_mgr not in ('apt', 'yum', 'dnf', 'dnf5')
 
 - name: Ensure obo bash_completion script exists
   ansible.builtin.copy:

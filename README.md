@@ -8,7 +8,8 @@ This was also designed as part of a desktop provisioning playbooks found here <h
 Requirements
 ------------
 
-- A distribution with `dnf` or `yum` or `apt`
+- Should work on most distros. Tested with Red Hat variants and Debian variants
+- Optional - For bash completion a distribution with `dnf`, `dnf5`, `yum` or `apt`
 
 Role Variables
 --------------
